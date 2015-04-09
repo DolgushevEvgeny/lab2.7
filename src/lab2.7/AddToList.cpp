@@ -5,18 +5,27 @@ using namespace std;
 
 void AddedItemToList(educationList &list, const string &fileName)
 {
-	ifstream inputFile(fileName, ifstream::in);
-
+	ifstream inputFile;
+	inputFile.open(fileName, ifstream::in);
 	if (!inputFile.is_open())
 	{
-		printf("Error: cannot load input file\n");
-		system("pause");
-		exit(1);
+		bool isFileOpen = false;
+		while (!isFileOpen)
+		{
+			cout << "Error: cannot load input file. Try again to enter new file name.\n";
+			string fileName;
+			getline(cin, fileName);
+			inputFile.open(fileName, ifstream::in);
+			if (inputFile.is_open())
+			{
+				isFileOpen = true;
+			}
+		}
 	}
 
-	string studentFIO;
 	while (inputFile.good())
 	{
+		string studentFIO;
 		getline(inputFile, studentFIO);
 		if (list.find(studentFIO) == list.end())
 		{

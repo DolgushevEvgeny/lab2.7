@@ -5,13 +5,23 @@ using namespace std;
 
 void SaveList(const educationList &list, const string &fileName)
 {
-	ofstream outputFile(fileName, ios::out);
+	ofstream outputFile;
+	outputFile.open(fileName, ios::out);
 
 	if (!outputFile.is_open())
 	{
-		printf("Error: cannot create output file\n");
-		system("pause");
-		exit(1);
+		bool isFileOpen = false;
+		while (!isFileOpen)
+		{
+			cout << "Error: cannot create output file. Try again to enter new file name.\n";
+			string fileName;
+			getline(cin, fileName);
+			outputFile.open(fileName, ios::out);
+			if (outputFile.is_open())
+			{
+				isFileOpen = true;
+			}
+		}
 	}
 
 	for (auto studentName : list)
