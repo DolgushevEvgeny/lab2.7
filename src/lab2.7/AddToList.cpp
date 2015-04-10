@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void AddedItemToList(educationList &list, const string &fileName)
+void AddedItemToList(EducationList &list, const string &fileName)
 {
 	ifstream inputFile;
 	inputFile.open(fileName, ifstream::in);

@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	vector<string> SectionsList;
-	educationList studentsList;
+	EducationList studentsList;
 	copy(istream_iterator<string>(cin), istream_iterator<string>(), back_inserter(SectionsList));
 	for (vector<string>::iterator position = SectionsList.begin(); position != SectionsList.end(); ++position)
 	{

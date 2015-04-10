@@ -3,6 +3,6 @@
 #include <fstream>
 #include "EducationList.h"
 
-extern educationList studentsList;
+extern EducationList studentsList;
 
-void SaveList(const educationList &list, const std::string &fileName);
+void SaveList(const EducationList &list, const std::string &fileName);

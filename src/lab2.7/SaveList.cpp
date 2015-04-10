@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void SaveList(const educationList &list, const string &fileName)
+void SaveList(const EducationList &list, const string &fileName)
 {
 	ofstream outputFile;
 	outputFile.open(fileName, ios::out);

@@ -3,6 +3,6 @@
 #include <fstream>
 #include "EducationList.h"
 
-extern educationList studentsList;
+extern EducationList studentsList;
 
-void AddedItemToList(educationList &list, const std::string &fileName);
+void AddedItemToList(EducationList &list, const std::string &fileName);
